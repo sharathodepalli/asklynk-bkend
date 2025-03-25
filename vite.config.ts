@@ -4,6 +4,7 @@ import { resolve } from 'path';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
+  base: '/asklynk-bkend/',
   plugins: [
     react(),
     viteStaticCopy({
@@ -50,5 +51,5 @@ export default defineConfig({
       '@': resolve(__dirname, 'src')
     }
   },
-  base: '/asklynk-bkend/',
+
 });
