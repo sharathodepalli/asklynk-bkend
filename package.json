@@ -1,0 +1,52 @@
+{
+  "name": "asklynk-extension",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "homepage": "https://github.com/sharathodepalli/asklynk-bkend.git",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:extension": "tsc && vite build --config vite.extension.config.ts",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.2.1",
+    "@supabase/supabase-js": "^2.39.7",
+    "@vitalets/google-translate-api": "^9.2.1",
+    "date-fns": "^3.3.1",
+    "lru-cache": "^10.2.0",
+    "lucide-react": "^0.344.0",
+    "marked-react": "^2.0.0",
+    "microsoft-cognitiveservices-speech-sdk": "^1.35.0",
+    "prismjs": "^1.29.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-draggable": "^4.4.6",
+    "react-speech-recognition": "^3.10.0",
+    "regenerator-runtime": "^0.14.1",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.250",
+    "@types/node": "^20.11.24",
+    "@types/prismjs": "^1.26.3",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@types/react-speech-recognition": "^3.9.5",
+    "@types/regenerator-runtime": "^0.13.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.18",
+    "eslint": "^9.22.0",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.4.35",
+    "prettier": "^3.5.3",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.8.2",
+    "vite": "^5.4.14",
+    "vite-plugin-static-copy": "^1.0.6"
+  }
+}

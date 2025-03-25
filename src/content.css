@@ -1,0 +1,163 @@
+/* Base styles for extension components */
+#asklynk-container {
+  all: initial;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  pointer-events: none;
+}
+
+/* Make interactive elements capture pointer events */
+#asklynk-container button,
+#asklynk-container input,
+#asklynk-container select,
+#asklynk-container textarea,
+#asklynk-container a,
+#asklynk-container [role="button"],
+#asklynk-container .react-draggable {
+  pointer-events: auto;
+}
+
+/* Platform-specific color schemes */
+#asklynk-container[data-platform="ms-teams"] .bg-indigo-600 {
+  background-color: #6264A7 !important;
+}
+
+#asklynk-container[data-platform="ms-teams"] .hover\:bg-indigo-700:hover {
+  background-color: #494AB4 !important;
+}
+
+#asklynk-container[data-platform="zoom"] .bg-indigo-600 {
+  background-color: #2D8CFF !important;
+}
+
+#asklynk-container[data-platform="zoom"] .hover\:bg-indigo-700:hover {
+  background-color: #0E78F9 !important;
+}
+
+#asklynk-container[data-platform="google-meet"] .bg-indigo-600 {
+  background-color: #1A73E8 !important;
+}
+
+#asklynk-container[data-platform="google-meet"] .hover\:bg-indigo-700:hover {
+  background-color: #185ABC !important;
+}
+
+#asklynk-container[data-platform="webex"] .bg-indigo-600 {
+  background-color: #00CF64 !important;
+}
+
+#asklynk-container[data-platform="webex"] .hover\:bg-indigo-700:hover {
+  background-color: #00B056 !important;
+}
+
+/* Override any problematic styles from meeting platforms */
+#asklynk-container * {
+  box-sizing: border-box;
+}
+
+#asklynk-container h1,
+#asklynk-container h2,
+#asklynk-container h3,
+#asklynk-container h4,
+#asklynk-container h5,
+#asklynk-container h6,
+#asklynk-container p,
+#asklynk-container span,
+#asklynk-container div,
+#asklynk-container button,
+#asklynk-container input {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+/* Fix for dark themes */
+#asklynk-container .bg-white {
+  background-color: #ffffff !important;
+}
+
+#asklynk-container .text-gray-600 {
+  color: #4b5563 !important;
+}
+
+#asklynk-container .text-gray-500 {
+  color: #6b7280 !important;
+}
+
+#asklynk-container .border-gray-200 {
+  border-color: #e5e7eb !important;
+}
+
+/* Override for Tailwind's backdrop overlay */
+#asklynk-container .bg-black.bg-opacity-50 {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Ensure buttons look consistent */
+#asklynk-container button {
+  appearance: none;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Make the ChatHead button more visible */
+#asklynk-container .fixed[role="button"],
+#asklynk-container button.w-12.h-12 {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Ensure proper z-index for modal overlay */
+#asklynk-container .fixed.inset-0.z-50 {
+  z-index: 2147483647 !important; /* Maximum z-index value */
+}
+
+/* Ensure modal content is properly positioned */
+#asklynk-container .w-full.max-w-4xl {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Teams dark theme adjustments */
+@media (prefers-color-scheme: dark), 
+       (data-theme: dark), 
+       (data-theme-type: dark) {
+  #asklynk-container .bg-white {
+    background-color: #2d2c2c !important;
+    color: #ffffff !important;
+  }
+  
+  #asklynk-container .bg-gray-50,
+  #asklynk-container .bg-gray-100 {
+    background-color: #3b3b3b !important;
+  }
+  
+  #asklynk-container .text-gray-600,
+  #asklynk-container .text-gray-500 {
+    color: #d1d5db !important;
+  }
+  
+  #asklynk-container .border-gray-200,
+  #asklynk-container .border-gray-300 {
+    border-color: #4b5563 !important;
+  }
+  
+  #asklynk-container input {
+    background-color: #3b3b3b !important;
+    color: #ffffff !important;
+    border-color: #4b5563 !important;
+  }
+  
+  #asklynk-container .bg-indigo-100 {
+    background-color: #4f46e5 !important;
+    color: #ffffff !important;
+  }
+}
