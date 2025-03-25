@@ -1,0 +1,1 @@
+chrome.runtime.onInstalled.addListener(()=>{console.log("AskLynk extension installed")});chrome.action.onClicked.addListener(e=>{e.id&&chrome.tabs.sendMessage(e.id,{action:"toggleAssistant"})});chrome.runtime.onMessage.addListener((e,n,s)=>{e.action==="contentScriptReady"&&console.log("Content script ready")});
